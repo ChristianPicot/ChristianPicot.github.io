@@ -1,0 +1,14 @@
+https://paicot.pythonanywhere.com/bondis/
+https://www.pythonanywhere.com/user/paicot/files/var/log/paicot.pythonanywhere.com.access.log
+https://medium.com/@produde/free-hosting-a-python-api-632968f14b20#2d58
+
+
+https://christianpicot.github.io/
+
+
+https://github.com/datosgcba/tiles-gcba?tab=readme-ov-file
+
+
+https://pages.github.com/
+
+https://docs.github.com/es/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site
