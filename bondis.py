@@ -1,6 +1,6 @@
 import requests
 
-def get_vehicle_locations(api_url):
+def get_vehicle_locations(api_url): 
     """
     Fetches vehicle locations from the given API URL.
 
