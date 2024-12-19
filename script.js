@@ -23,7 +23,9 @@ function updateBusPositions() {
                     busMarkers[busId].setLatLng([lat, lng]);
                 } else {
                     // Create a new marker
-                    busMarkers[busId] = L.marker([lat, lng]).addTo(map).bindPopup(`Bus ID: ${busId}`);
+                    busMarkers[busId] = L.marker([lat, lng]).addTo(map)
+                    .bindPopup(`<b>Bus ID:</b> ${busId}<br>
+                        <b>Bus linea:</b> ${linea}<br>`);
 
                     // Add a moving icon (optional)
                     var busIcon = L.icon({
