@@ -7,10 +7,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Add the locate control to the map
-L.control.locate({
-    setView: true, // Automatically zoom and center the map on the user's location
-    maxZoom: 16 // Maximum zoom level when locating the user
-}).addTo(map);
+// L.control.locate({
+//     setView: true, // Automatically zoom and center the map on the user's location
+//     maxZoom: 16 // Maximum zoom level when locating the user
+// }).addTo(map);
 
 let busMarkers = {}; // Object to store bus markers
 
