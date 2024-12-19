@@ -6,6 +6,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
+// Add the locate control to the map
+L.control.locate({
+    setView: true, // Automatically zoom and center the map on the user's location
+    maxZoom: 16 // Maximum zoom level when locating the user
+}).addTo(map);
+
 let busMarkers = {}; // Object to store bus markers
 
 function updateBusPositions() {
@@ -41,40 +47,6 @@ function updateBusPositions() {
             console.error("Error fetching bus positions:", error);
         });
 }
-
-
-function updateBusPositionsNEW() {
-    // fetch('https://apitransporte.buenosaires.gob.ar/colectivos/vehiclePositions?client_id=XXXXX&client_secret=XXXXXXX&json=1&agency_id=84') // Replace with your API endpoint
-    fetch('https://paicot.pythonanywhere.com/bondis/') // Replace with your API endpoint
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(item => {
-                const busId = item["_vehicle"]["_vehicle"]["_id"]; //bus.id;
-                const lat = item["_vehicle"]["_position"]["_latitude"]; //bus.latitude;
-                const lng = item["_vehicle"]["_position"]["_longitude"]; //bus.longitude;
-
-                if (busMarkers[busId]) {
-                    // Update existing marker position
-                    busMarkers[busId].setLatLng([lat, lng]);
-                } else {
-                    // Create a new marker
-                    busMarkers[busId] = L.marker([lat, lng]).addTo(map).bindPopup(`Bus ID: ${busId}`);
-
-                    // Add a moving icon (optional)
-                    var busIcon = L.icon({
-                        iconUrl: 'bondi59.png', // Replace with the path to your icon
-                        iconSize: [32, 32], // Adjust icon size as needed
-                        iconAnchor: [16, 16], // Adjust icon anchor as needed
-                        popupAnchor: [0, -16]
-                    });
-                    busMarkers[busId].setIcon(busIcon);
-                }
-            });
-        }).catch(error => {
-            console.error("Error fetching bus positions:", error);
-        });
-}
-
 
 // Initial update
 updateBusPositions();
