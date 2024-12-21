@@ -52,4 +52,4 @@ function updateBusPositions() {
 updateBusPositions();
 
 // Update positions every 30 seconds
-setInterval(updateBusPositions, 25000); // 30000 milliseconds = 30 seconds
+setInterval(updateBusPositions, 15000); // 30000 milliseconds = 30 seconds
