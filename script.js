@@ -23,6 +23,8 @@ function updateBusPositions() {
                 const lat = bus.latitude;
                 const lng = bus.longitude;
                 const linea = bus.linea;
+                const label = bus.vehicle._vehicle._label;
+                const velocidad = bus.vehicle._position._speed;
 
                 if (busMarkers[busId]) {
                     // Update existing marker position
@@ -31,7 +33,10 @@ function updateBusPositions() {
                     // Create a new marker
                     busMarkers[busId] = L.marker([lat, lng]).addTo(map)
                     .bindPopup(`<b>Bus ID:</b> ${busId}<br>
-                        <b>Bus linea:</b> ${linea}<br>`);
+                        <b>Bus linea:</b> ${linea}<br>
+                        <b>Bus velocidad:</b> ${velocidad}<br>
+                        <b>Bus label:</b> ${label}<br>`
+                    );
 
                     // Add a moving icon (optional)
                     var busIcon = L.icon({
