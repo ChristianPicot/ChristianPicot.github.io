@@ -5,6 +5,26 @@ https://medium.com/@produde/free-hosting-a-python-api-632968f14b20#2d58
 
 https://christianpicot.github.io/
 
+Leafet
+https://leafletjs.com/
+https://mappinggis.com/2022/09/folium-utilizando-leaflet-con-python/
+
+Taller de API
+https://drive.google.com/drive/folders/1b84-l6OFpzg2mQZofUW2M2lGwv7ACoib
+https://github.com/datosgcba/taller-api-transporte/blob/master/README.md
+
+
+CONSOLA GCBA
+https://api-transporte.buenosaires.gob.ar/console
+https://data.buenosaires.gob.ar/dataset/?groups=movilidad&page=2
+https://buenosaires.gob.ar/apis
+https://datosabiertos-apis.buenosaires.gob.ar/BA_Root/Documentacion?schema_name=procesos_geograficos
+https://datosabiertos-apis.buenosaires.gob.ar/BA_Root/Documentacion?schema_name=catastro
+https://data.buenosaires.gob.ar/dataset/colectivos-gtfs-frequency
+
+TILEs de la ciudad
+https://github.com/datosgcba/tiles-gcba?tab=readme-ov-file
+https://github.com/datosgcba/tiles-gcba/
 
 https://github.com/datosgcba/tiles-gcba?tab=readme-ov-file
 
@@ -12,3 +32,18 @@ https://github.com/datosgcba/tiles-gcba?tab=readme-ov-file
 https://pages.github.com/
 
 https://docs.github.com/es/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site
+
+
+APIs de la ciudad
+https://anypoint.mulesoft.com/exchange/portals/api-gcba/
+
+
+El estandar GTFS
+https://support.google.com/transitpartners/answer/10104434?hl=es
+https://gtfs.org/documentation/schedule/examples/routes-stops-trips/
+https://gtfs.org/es/getting-started/what-is-GTFS/
+https://gtfs.org/es/
+
+ProtoBuf
+https://protobuf.dev/
+https://protobuf.dev/getting-started/pythontutorial/

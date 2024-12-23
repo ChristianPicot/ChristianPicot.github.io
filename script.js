@@ -35,7 +35,7 @@ function updateBusPositions() {
 
                     // Add a moving icon (optional)
                     var busIcon = L.icon({
-                        iconUrl: `bondi${linea}.png`, //'bondi59.png', // Replace with the path to your icon
+                        iconUrl: `./colectivosPNG/bondi${linea}.png`, //'bondi59.png', // Replace with the path to your icon
                         iconSize: [32, 32], // Adjust icon size as needed
                         iconAnchor: [16, 16], // Adjust icon anchor as needed
                         popupAnchor: [0, -16]
