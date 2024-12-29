@@ -32,10 +32,10 @@ function updateBusPositions() {
                 } else {
                     // Create a new marker
                     busMarkers[busId] = L.marker([lat, lng]).addTo(map)
-                    .bindPopup(`<b>Bus ID:</b> ${busId}<br>
-                        <b>Bus linea:</b> ${linea}<br>
-                        <b>Bus velocidad:</b> ${velocidad}<br>
-                        <b>Bus label:</b> ${label}<br>`
+                    .bindPopup(`<b>ID bondi:</b> ${busId}<br>
+                        <b>Linea:</b> ${linea}<br>
+                        <b>Velocidad:</b> ${velocidad}<br>
+                        <b>Interno:</b> ${label}<br>`
                     );
 
                     // Add a moving icon (optional)
