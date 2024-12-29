@@ -3,9 +3,9 @@
 let lat = -34.6037;
 let lng = -58.3816;
 
-
+let map = L.map('map');//.setView([lat, lng], 13);
 // Add a tile layer (choose a map provider)
-const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+let tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
 
@@ -16,6 +16,7 @@ if (navigator.geolocation) {
       lat = position.coords.latitude;
       lng = position.coords.longitude;
       console.log("HOLA");
+      map.setView([lat, lng], 16); // 13 is the zoom level
     },
     function(error) {
       console.error("Error al obtener la localizacion del usuario:", error);
@@ -26,7 +27,7 @@ if (navigator.geolocation) {
   console.error("Geolocation no esta habilitada en este navagador.");
 }
 
-const map = L.map('map').setView([lat, lng], 13); // 13 is the zoom level
+
 tileLayer.addTo(map);
 
 
