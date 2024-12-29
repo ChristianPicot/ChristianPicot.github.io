@@ -6,8 +6,8 @@ let lng = -58.3816;
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       function(position) {
-        lati = position.coords.latitude;
-        lngi = position.coords.longitude;
+        lat = position.coords.latitude;
+        lng = position.coords.longitude;
       },
       function(error) {
         console.error("Error getting user's location:", error);
