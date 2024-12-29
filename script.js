@@ -10,9 +10,6 @@ if (navigator.geolocation) {
 
         // Center the map on user's location
         const map = L.map('map').setView([lat, lng], 20);
-
-        // Add a marker at user's location
-        L.marker([lat, lng]).addTo(mymap).bindPopup("Estas aca!").openPopup(); 
       },
       function(error) {
         console.error("Error getting user's location:", error);
