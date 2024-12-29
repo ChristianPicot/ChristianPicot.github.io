@@ -16,6 +16,8 @@ if (navigator.geolocation) {
     function(position) {
       lat = position.coords.latitude;
       lng = position.coords.longitude;
+      console.log("HOLA");
+      map.setView([lat, lng], 13);
     },
     function(error) {
       console.error("Error getting user's location:", error);
@@ -28,7 +30,7 @@ if (navigator.geolocation) {
   console.error("Geolocation is not supported by this browser.");
 }
 
-map.setView([lat, lng], 13);
+
 
 // Add the locate control to the map
 // L.control.locate({
