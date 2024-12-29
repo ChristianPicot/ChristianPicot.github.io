@@ -20,7 +20,7 @@ if (navigator.geolocation) {
     console.error("Geolocation is not supported by this browser.");
   }
 
-  const map = L.map('map').setView([lat, lng], 20);
+  const map = L.map('map').setView([lat, lng], 13);
 
 
 // Add a tile layer (choose a map provider)
