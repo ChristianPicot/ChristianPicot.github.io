@@ -3,30 +3,32 @@
 let lat = -34.6037;
 let lng = -58.3816;
 
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      function(position) {
-        lat = position.coords.latitude;
-        lng = position.coords.longitude;
-      },
-      function(error) {
-        console.error("Error getting user's location:", error);
-        // Handle location access denied or other errors
-        // For example, display an error message to the user
-        alert("Unable to access your location. Please check your browser settings.");
-      }
-    );
-  } else {
-    console.error("Geolocation is not supported by this browser.");
-  }
-
-  const map = L.map('map').setView([lat, lng], 13);
-
+const map = L.map('map').setView([lat, lng], 13); // 13 is the zoom level
 
 // Add a tile layer (choose a map provider)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(
+    function(position) {
+      lat = position.coords.latitude;
+      lng = position.coords.longitude;
+    },
+    function(error) {
+      console.error("Error getting user's location:", error);
+      // Handle location access denied or other errors
+      // For example, display an error message to the user
+      alert("Unable to access your location. Please check your browser settings.");
+    }
+  );
+} else {
+  console.error("Geolocation is not supported by this browser.");
+}
+
+map.setView([lat, lng], 13);
 
 // Add the locate control to the map
 // L.control.locate({
