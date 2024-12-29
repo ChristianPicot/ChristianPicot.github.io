@@ -1,5 +1,38 @@
 // Initialize the map
-const map = L.map('map').setView([-34.6037, -58.3816], 13); // 13 is the zoom level
+
+
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+
+        // Center the map on user's location
+        const map = L.map('map').setView([lat, lng], 20);
+
+        // Add a marker at user's location
+        L.marker([lat, lng]).addTo(mymap).bindPopup("Estas aca!").openPopup(); 
+      },
+      function(error) {
+        console.error("Error getting user's location:", error);
+        // Handle location access denied or other errors
+        // For example, display an error message to the user
+        alert("Unable to access your location. Please check your browser settings.");
+      }
+    );
+  } else {
+    console.error("Geolocation is not supported by this browser.");
+    // Handle browsers that don't support geolocation
+    const map = L.map('map').setView([-34.6037, -58.3816], 13); // 13 is the zoom level
+
+  }
+
+
+
+
+
+
 
 // Add a tile layer (choose a map provider)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
