@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Map</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+</head>
+<body>
+<div id="map" style="height: 900px;"></div>
+
+<script>
+  var mymap = L.map('map').setView([-34.6037, -58.3816], 13); 
+  
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(mymap);
+
+  // Function to get user's location
+  function getUserLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          var lat = position.coords.latitude;
+          var lng = position.coords.longitude;
+
+          // Center the map on user's location
+          mymap.setView([lat, lng], 20);
+
+          // Add a marker at user's location
+          L.marker([lat, lng]).addTo(mymap).bindPopup("Estas aca!").openPopup(); 
+        },
+        function(error) {
+          console.error("Error getting user's location:", error);
+          // Handle location access denied or other errors
+          // For example, display an error message to the user
+          alert("Unable to access your location. Please check your browser settings.");
+        }
+      );
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+      // Handle browsers that don't support geolocation
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
+
+  // Call the function to get user's location
+  getUserLocation(); 
+</script>
+
+</body>
+</html>
