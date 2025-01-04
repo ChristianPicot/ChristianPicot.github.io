@@ -3,7 +3,7 @@
 let lat = -34.6037;
 let lng = -58.3816;
 
-const map = L.map('map').setView([lat, lng], 20); // 13 is the zoom level
+const map = L.map('map').setView([lat, lng], 13); // 13 is the zoom level
 
 // Add a tile layer (choose a map provider)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -17,7 +17,7 @@ if (navigator.geolocation) {
       lat = position.coords.latitude;
       lng = position.coords.longitude;
       console.log("HOLA");
-      map.setView([lat, lng], 20);
+      map.setView([lat, lng], 13);
     },
     function(error) {
       console.error("Error getting user's location:", error);
