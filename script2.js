@@ -17,7 +17,7 @@ if (navigator.geolocation) {
       lat = position.coords.latitude;
       lng = position.coords.longitude;
       console.log("HOLA");
-      map.setView([lat, lng], 16);
+      map.setView([lat, lng], 20);
     },
     function(error) {
       console.error("Error getting user's location:", error);
