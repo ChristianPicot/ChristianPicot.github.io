@@ -41,7 +41,8 @@ if (navigator.geolocation) {
 let busMarkers = {}; // Object to store bus markers
 
 function updateBusPositions() {
-    fetch('https://paicot.pythonanywhere.com/bondis/') // Replace with your API endpoint
+    //fetch('https://paicot.pythonanywhere.com/bondis/') // Replace with your API endpoint
+    fetch('http://181.170.199.213/bondis/') // Replace with your API endpoint    
         .then(response => response.json())
         .then(data => {
             data.forEach(bus => {
@@ -83,4 +84,4 @@ function updateBusPositions() {
 updateBusPositions();
 
 // Update positions every 30 seconds
-setInterval(updateBusPositions, 15000); // 30000 milliseconds = 30 seconds
+setInterval(updateBusPositions, 5000); // 30000 milliseconds = 30 seconds
