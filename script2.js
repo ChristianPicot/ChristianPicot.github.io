@@ -41,8 +41,13 @@ if (navigator.geolocation) {
 let busMarkers = {}; // Object to store bus markers
 
 function updateBusPositions() {
-    fetch('https://paicot.pythonanywhere.com/bondis/') // Replace with your API endpoint
+    //fetch('https://paicot.pythonanywhere.com/bondis/') // Replace with your API endpoint
     //fetch('https://181.170.199.213/bondis/') // Replace with your API endpoint    
+    fetch('https://71bb-2800-21e0-3000-55a-2f93-9b57-486c-f84b.ngrok-free.app/bondis/', {
+      headers: {
+        'ngrok-skip-browser-warning': 'true' // Set your desired value here
+      }
+    }) // Replace with your API endpoint
         .then(response => response.json())
         .then(data => {
             data.forEach(bus => {
